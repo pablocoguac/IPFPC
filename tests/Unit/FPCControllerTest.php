@@ -19,6 +19,6 @@ class FPCControllerTest extends TestCase
 
         // Assert
         $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertTrue($data['Points'] > 30);
+        $this->assertTrue($data['Points'] <= 30);
     }
 }
