@@ -15,4 +15,13 @@ class FPCController extends Controller
 
         return response()->json(['First' => $teams[$randomIndex], 'Points' => $randomNumber]);
     }
+
+    public function MatchFirstQuarter()
+    {
+        $months = array("Jan", "Feb", "Mar");
+        $randomDay = mt_rand(1, 30);
+        $randomIndex = mt_rand(0, 2);
+
+        return response()->json(['Month' => $months[$randomIndex], 'Day' => $randomDay]);
+    }
 }
