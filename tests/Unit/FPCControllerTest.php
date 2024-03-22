@@ -21,4 +21,27 @@ class FPCControllerTest extends TestCase
         $this->assertInstanceOf(JsonResponse::class, $response);
         $this->assertTrue($data['Points'] <= 30);
     }
+    
+
+    public function test_get_first_quarter_match_month()
+    {
+        $controller = new FPCController();
+
+        $response = $controller->MatchFirstQuarter();
+        $data = $response->getData(true);
+
+        $this->assertInstanceOf(JsonResponse::class, $response);
+        $this->assertTrue($data['Month'] == 'Jan' || $data['Month'] == 'Feb' || $data['Month'] == 'Mar');
+    }
+
+    public function test_get_first_quarter_match_day(){
+        $controller = new FPCController();
+
+        $response = $controller->MatchFirstQuarter();
+        $data = $response->getData(true);
+
+        $this->assertInstanceOf(JsonResponse::class, $response);
+        $this->assertTrue($data['Day'] <= 30);
+    }
+    
 }
