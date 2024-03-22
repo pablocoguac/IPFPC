@@ -9,9 +9,9 @@ class FPCController extends Controller
 {
     public function FirsTeam()
     {
-        $teams = array("Millonarios", "Nacional", "Tolima", "America");
+        $teams = array("Millonarios", "Nacional", "Tolima", "America", "Santa Fe");
         $randomNumber = mt_rand(1, 30);
-        $randomIndex = mt_rand(0, 3);
+        $randomIndex = mt_rand(0, 4);
 
         return response()->json(['First' => $teams[$randomIndex], 'Points' => $randomNumber]);
     }
