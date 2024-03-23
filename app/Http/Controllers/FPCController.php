@@ -9,7 +9,7 @@ class FPCController extends Controller
 {
     public function FirsTeam()
     {
-        $teams = array("Millonarios", "Nacional", "Tolima", "America", "Santa Fe");
+        $teams = array("Millonarios", "Nacional", "Tolima", "America", "Santa Fe", "Aguilas", "Patriotas");
         $randomNumber = mt_rand(1, 30);
         $randomIndex = mt_rand(0, 4);
 
